@@ -5,7 +5,6 @@ Tetoris
 ### 개발 정보
 * 개발 기간: 2026.01.05(월) ~   
 * 개발자: [@dbsans11](https://github.com/dbsans11)
-</br></br>
 * 사용 언어: C++   
 * IDE: Visual Studio   
 </br></br>
