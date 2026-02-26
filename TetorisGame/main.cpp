@@ -1,13 +1,12 @@
-#include "Board.h"
-#include "Renderer.h"
-#include "Block.h"
+#include "GameManager.h"
 #include <Windows.h>
 int main() {
-	Board board; Renderer renderer; renderer.updateBoard(board); renderer.InitGame();
+	srand(static_cast<unsigned int>(time(NULL)));
+	GameManager game;
 	while (1) {
-		renderer.updateBoard(board, 3, 1);
-		renderer.ClearScreen();
-		renderer.BufferFlip();
+		game.Update();
+		game.Render();
 		Sleep(33);
 	}
+	return 0;
 }

@@ -24,7 +24,7 @@ struct stConsole {
 class Renderer {
 private:
 	stConsole console;
-	const char block_table[3][4] = { "  ", "■", "▣"};
+	const char block_table[4][4] = { "  ", "■", "□", "▣"};
 public:
 	void InitGame(bool blnitConsole = true) {
 		if (blnitConsole) {
@@ -64,7 +64,7 @@ public:
 		console.nCurBuffer = console.nCurBuffer ? 0 : 1;
 	}
 
-	void updateBoard(const Board& board, int nXOffset=0, int nYOffset=0) {
+	void updateBoard(const Board& board, const Block& block,int nXOffset=0, int nYOffset=0) {
 		COORD coord{ 0, };
 		DWORD dw = 0;
 
@@ -74,6 +74,17 @@ public:
 				coord.Y = nY + nYOffset;
 				SetConsoleCursorPosition(console.hBuffer[console.nCurBuffer], coord);
 				WriteFile(console.hBuffer[console.nCurBuffer], block_table[board.getValue(nX, nY)], (DWORD)strlen(block_table[board.getValue(nX, nY)]), &dw, NULL);
+			}
+		}
+
+		for (int i = 0; i < 4; ++i) {
+			for (int j = 0; j < 4; ++j) {
+				if (block.getShapeValue(i, j) == 1) {
+					coord.X = (block.getX() + j) * 2 + nXOffset;
+					coord.Y = (block.getY() + i) + nYOffset;
+					SetConsoleCursorPosition(console.hBuffer[console.nCurBuffer], coord);
+					WriteFile(console.hBuffer[console.nCurBuffer], block_table[1], (DWORD)strlen(block_table[1]), &dw, NULL);
+				}
 			}
 		}
 	}

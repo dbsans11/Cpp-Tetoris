@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameManager.h" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
