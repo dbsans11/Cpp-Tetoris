@@ -126,6 +126,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Block.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Renderer.h" />
   </ItemGroup>
