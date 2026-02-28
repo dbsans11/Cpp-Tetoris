@@ -123,13 +123,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameManager.h" />
+    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="GameScene.h" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SceneChanger.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseScene.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SceneChanger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
