@@ -62,7 +62,7 @@ void Renderer::DrawString(const char* str, int x, int y) {
 	WriteFile(console.hBuffer[console.nCurBuffer], str, (DWORD)strlen(str), &dw, NULL);
 }
 
-void Renderer::DrawBoard(const Board& board, const Block& block, int x, int y) {
+void Renderer::DrawBoard(const Board& board, const Block& block, int ghostY, int x, int y) {
 	COORD coord{ 0, };
 	DWORD dw = 0;
 
@@ -79,6 +79,10 @@ void Renderer::DrawBoard(const Board& board, const Block& block, int x, int y) {
 		for (int j = 0; j < 4; ++j) {
 			if (block.getShapeValue(i, j) == 1) {
 				coord.X = (block.getX() + j) * 2 + x;
+				coord.Y = ghostY + i;
+				SetConsoleCursorPosition(console.hBuffer[console.nCurBuffer], coord);
+				WriteFile(console.hBuffer[console.nCurBuffer], block_table[4], (DWORD)strlen(block_table[1]), &dw, NULL);
+
 				coord.Y = (block.getY() + i) + y;
 				SetConsoleCursorPosition(console.hBuffer[console.nCurBuffer], coord);
 				WriteFile(console.hBuffer[console.nCurBuffer], block_table[1], (DWORD)strlen(block_table[1]), &dw, NULL);

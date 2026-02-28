@@ -66,11 +66,13 @@ public:
 	int getType() const { return type; }
 	int getRotate() const { return rotation; }
 	bool getShapeValue(int r, int c) const { return SHAPES[type][rotation][r][c]; }
+	const int(*getShape() const)[4] { return SHAPES[type][rotation]; }
+	const int (*getNextShape() const)[4] { return SHAPES[type][(rotation + 1) % 4]; }
 
-	void moveDown() { y++; }
-	void moveLeft() { x--; }
-	void moveRight() { x++; }
-	void rotate() { rotation = (rotation + 1) % 4; }
+	void MoveDown() { y++; }
+	void MoveLeft() { x--; }
+	void MoveRight() { x++; }
+	void Rotate() { rotation = (rotation + 1) % 4; }
 };
 
 #endif

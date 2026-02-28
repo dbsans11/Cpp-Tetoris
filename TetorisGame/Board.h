@@ -23,7 +23,7 @@ public:
 	
 	int getValue(int x, int y) const { return board[y][x]; }
 
-	void lockBlock(const Block& block) {
+	void LockBlock(const Block& block) {
 		for (int i = 0; i < 4; ++i) {
 			for (int j = 0; j < 4; ++j) {
 				if (block.getShapeValue(i, j) == 1) {

@@ -11,8 +11,7 @@ SceneType TitleScene::InputKey() {
 
 		if (key == KEY_UP) menu = menu > 0 ? menu - 1 : 2;
 		else if (key == KEY_DOWN) menu = menu < 2 ? menu + 1 : 0;
-		return SceneType::TITLE;
-	}
+	} return SceneType::TITLE;
 }
 
 void TitleScene::Render() {

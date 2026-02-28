@@ -1,7 +1,6 @@
 #ifndef __TITLE_SCENE_H__
 #define __TITLE_SCENE_H__
 
-#include <conio.h>
 #include "BaseScene.h"
 
 class TitleScene : public BaseScene {

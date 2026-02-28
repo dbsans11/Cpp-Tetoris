@@ -21,7 +21,7 @@ struct stConsole {
 class Renderer {
 private:
 	stConsole console;
-	const char block_table[4][4] = { "  ", "■", "□", "▣"};
+	const char block_table[5][4] = { "  ", "■", "□", "▣", "▨"};
 public:
 	void InitGame(bool blnitConsole = true);
 	void DestroyGame();
@@ -30,7 +30,7 @@ public:
 	void BufferFlip();
 
 	void DrawString(const char* str, int x = 0, int y = 0);
-	void DrawBoard(const Board& board, const Block& block, int x = 0, int y = 0);
+	void DrawBoard(const Board& board, const Block& block, int ghostY, int x = 0, int y = 0);
 };
 
 #endif

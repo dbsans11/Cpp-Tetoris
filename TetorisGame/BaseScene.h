@@ -15,7 +15,7 @@ enum keyCode {
 	KEY_DOWN = 80,
 
 	KEY_ENTER = 13,
-	KEY_SPACE = 32
+	KEY_SPACE = 32,
 };
 
 class BaseScene {
