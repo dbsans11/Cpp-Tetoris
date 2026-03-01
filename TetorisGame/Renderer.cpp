@@ -79,7 +79,7 @@ void Renderer::DrawBoard(const Board& board, const Block& block, int ghostY, int
 		for (int j = 0; j < 4; ++j) {
 			if (block.getShapeValue(i, j) == 1) {
 				coord.X = (block.getX() + j) * 2 + x;
-				coord.Y = ghostY + i;
+				coord.Y = ghostY + i + y;
 				SetConsoleCursorPosition(console.hBuffer[console.nCurBuffer], coord);
 				WriteFile(console.hBuffer[console.nCurBuffer], block_table[4], (DWORD)strlen(block_table[1]), &dw, NULL);
 

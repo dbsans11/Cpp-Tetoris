@@ -1,4 +1,6 @@
 #include "GameScene.h"
+#include <string>
+using namespace std;
 
 SceneType GameScene::InputKey() {
 	if (_kbhit()) {
@@ -10,7 +12,10 @@ SceneType GameScene::InputKey() {
 		case KEY_DOWN: if (CanMove(curX, curY + 1)) curBlock.MoveDown(); break;
 		case 'Z':
 		case 'z':
-			if (CanMove(curX, curY, curBlock.getNextShape())) curBlock.Rotate(); break;
+			if (CanMove(curX, curY, curBlock.getNextShape())) curBlock.Rotate(); 
+			else if (CanMove(curX - 1, curY, curBlock.getNextShape())) { curBlock.MoveLeft(); curBlock.Rotate(); }
+			else if (CanMove(curX + 1, curY, curBlock.getNextShape())) { curBlock.MoveRight(); curBlock.Rotate(); }
+			break;
 		case KEY_SPACE:
 			int dropY = curBlock.getY(); while (CanMove(curBlock.getX(), dropY + 1)) dropY++;
 			for (int i = curBlock.getY(); i < dropY; ++i) curBlock.MoveDown();
@@ -53,13 +58,38 @@ void GameScene::BlockUpdate() {
 
 void GameScene::Render() {
 	int ghostY = curBlock.getY(); while (CanMove(curBlock.getX(), ghostY + 1)) ghostY++;
-	getRenderer()->DrawBoard(board, curBlock, ghostY, 0, 0);
+	getRenderer()->DrawBoard(board, curBlock, ghostY, 4, 2);
+
+	getRenderer()->DrawString("+---NEXT---+", 31, 3);
+	getRenderer()->DrawString("|          |", 31, 4);
+	getRenderer()->DrawString("|          |", 31, 5);
+	getRenderer()->DrawString("|          |", 31, 6);
+	getRenderer()->DrawString("|          |", 31, 7);
+	getRenderer()->DrawString("+----------+", 31, 8);
+	for (int i = 0; i < 4; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			if (nextBlock.getShapeValue(i, j) == 1)
+				getRenderer()->DrawString("■ ", j * 2 + 34, i + 4);
+		}
+	}
+	
+	string scoreText = "SCORE: " + to_string(score);
+	getRenderer()->DrawString(scoreText.c_str(), 31, 11);
+	getRenderer()->DrawString("[ Z ] 블록 회전", 31, 14);
+	getRenderer()->DrawString("[ ← → ] 블록 이동", 31, 16);
+	getRenderer()->DrawString("[ ↓ ] 소프트 드롭", 31, 18);
+	getRenderer()->DrawString("[ SPACE ] 하드 드롭", 31, 20);
 
 	if (isGameOver) {
-		getRenderer()->DrawString("======================", 5, 10);
-		getRenderer()->DrawString("      GAME OVER       ", 5, 11);
-		getRenderer()->DrawString(" Press Any Key to Exit ", 5, 12);
-		getRenderer()->DrawString("======================", 5, 13);
+		getRenderer()->DrawString("                        ", 4, 9);
+		getRenderer()->DrawString("========================", 4, 10);
+		getRenderer()->DrawString("                        ", 4, 11);
+		getRenderer()->DrawString("       GAME OVER       ", 4, 12);
+		getRenderer()->DrawString("                        ", 4, 13);
+		getRenderer()->DrawString("  Press Any Key to Exit ", 4, 14);
+		getRenderer()->DrawString("                        ", 4, 15);
+		getRenderer()->DrawString("========================", 4, 16);
+		getRenderer()->DrawString("                        ", 4, 17);
 	}
 
 	getRenderer()->BufferFlip();
