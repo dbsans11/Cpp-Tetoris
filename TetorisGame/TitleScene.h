@@ -6,7 +6,7 @@
 class TitleScene : public BaseScene {
 private:
 	int menu;
-	int isBlink;
+	bool isBlink;
 public:
 	TitleScene(Renderer* r) : BaseScene(r) { menu = 0; isBlink = 0; }
 	SceneType getSceneType() override { return SceneType::TITLE; }

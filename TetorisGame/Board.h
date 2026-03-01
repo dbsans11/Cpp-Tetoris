@@ -34,6 +34,19 @@ public:
 			}
 		}
 	}
+
+	int CheckLines() {
+		int clearedLine = 0;
+		for (int y = BOARD_HEIGHT - 2; y >= 0; --y) {
+			bool full = 1;
+			for (int x = 0; x < BOARD_WIDTH; ++x) { if (board[y][x] == 0) { full = 0; break; } }
+			if (full) {
+				board.erase(board.begin() + y);
+				board.insert(board.begin(), vector<int>(BOARD_WIDTH, 0));
+				y++; clearedLine++;
+			}
+		} return clearedLine;
+	}
 };
 
 #endif
