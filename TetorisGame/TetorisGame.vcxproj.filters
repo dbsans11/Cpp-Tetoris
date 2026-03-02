@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="소스 파일">
@@ -56,13 +56,5 @@
     <ClInclude Include="SettingScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-<<<<<<< HEAD
-=======
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="Bgm.wav">
-      <Filter>리소스 파일</Filter>
-    </Media>
->>>>>>> 0b7989a7207a9d7e54619030f278543a3109afd8
   </ItemGroup>
 </Project>
