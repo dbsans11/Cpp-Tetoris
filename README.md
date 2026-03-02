@@ -22,6 +22,10 @@ TETORIS
 ```
 </br></br>
 
+### 플레이 영상
+https://github.com/user-attachments/assets/d6d7c122-9244-4f5f-948d-547b944e3064
+<br><br>
+
 환경 설정
 ---
 명령 프롬프트 설정을 다음과 같이 바꾸면 쾌적한 플레이가 가능합니다.
