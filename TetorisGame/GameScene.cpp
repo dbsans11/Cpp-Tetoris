@@ -76,13 +76,8 @@ void GameScene::Render() {
 	string scoreText = "SCORE: " + to_string(score);
 	getRenderer()->DrawString(scoreText.c_str(), 31, 11);
 	getRenderer()->DrawString("[ Z ] 블록 회전", 31, 14);
-<<<<<<< HEAD
 	getRenderer()->DrawString("[ ←  →  ] 블록 이동", 31, 16);
 	getRenderer()->DrawString("[ ↓  ] 소프트 드롭", 31, 18);
-=======
-	getRenderer()->DrawString("[ ← → ] 블록 이동", 31, 16);
-	getRenderer()->DrawString("[ ↓ ] 소프트 드롭", 31, 18);
->>>>>>> b68ba62997f5000c8908e82401753704e83081cd
 	getRenderer()->DrawString("[ SPACE ] 하드 드롭", 31, 20);
 
 	if (isGameOver) {
