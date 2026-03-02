@@ -137,9 +137,13 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SceneChanger.h" />
+    <ClInclude Include="SettingScene.h" />
+<<<<<<< HEAD
+=======
   </ItemGroup>
   <ItemGroup>
     <Media Include="Bgm.wav" />
+>>>>>>> 0b7989a7207a9d7e54619030f278543a3109afd8
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

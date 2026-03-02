@@ -3,7 +3,7 @@ TETORIS
 프로젝트 정보
 ---
 ### 개발 정보
-* 개발 기간: 2026.01.05(월), 2026.02.24(화) ~
+* 개발 기간: 2026.01.05(월), 2026.02.24(화) ~ 2026.03.01(일), (추후 추가 개발 예정)
 * 개발자: [@dbsans11](https://github.com/dbsans11)
 * 사용 언어: C++   
 * IDE: Visual Studio   
@@ -21,6 +21,12 @@ TETORIS
 └── README.md
 ```
 </br></br>
+
+### 플레이 영상
+
+https://github.com/user-attachments/assets/7548863a-7716-49b3-a7f4-8daf0ea70bc9
+
+<br><br>
 
 환경 설정
 ---
