@@ -135,9 +135,9 @@
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="Board.h" />
-    <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SceneChanger.h" />
+    <ClInclude Include="SettingScene.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="Bgm.wav" />

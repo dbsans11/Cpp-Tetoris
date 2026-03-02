@@ -15,17 +15,17 @@ SceneType TitleScene::InputKey() {
 }
 
 void TitleScene::Render() {
-	getRenderer()->DrawString("■ ■ ■   ■ ■ ■   ■ ■ ■   ■ ■ ■   ■ ■ ■   ■ ■ ■   ■ ■ ■", 0, 0);
-	getRenderer()->DrawString("  ■     ■         ■     ■   ■   ■   ■     ■     ■", 0, 1);
-	getRenderer()->DrawString("  ■     ■ ■ ■     ■     ■   ■   ■ ■       ■     ■ ■ ■", 0, 2);
-	getRenderer()->DrawString("  ■     ■         ■     ■   ■   ■   ■     ■         ■", 0, 3);
-	getRenderer()->DrawString("  ■     ■ ■ ■     ■     ■ ■ ■   ■   ■   ■ ■ ■   ■ ■ ■", 0, 4);
+	getRenderer()->DrawString("■ ■ ■   ■ ■ ■   ■ ■ ■   ■ ■ ■   ■ ■ ■   ■ ■ ■   ■ ■ ■", 4, 2);
+	getRenderer()->DrawString("  ■     ■         ■     ■   ■   ■   ■     ■     ■", 4, 3);
+	getRenderer()->DrawString("  ■     ■ ■ ■     ■     ■   ■   ■ ■       ■     ■ ■ ■", 4, 4);
+	getRenderer()->DrawString("  ■     ■         ■     ■   ■   ■   ■     ■         ■", 4, 5);
+	getRenderer()->DrawString("  ■     ■ ■ ■     ■     ■ ■ ■   ■   ■   ■ ■ ■   ■ ■ ■", 4, 6);
 
-	getRenderer()->DrawString(isBlink?"< press ENTER to play >":"                       ", 15, 7);
+	getRenderer()->DrawString(isBlink?"< press ENTER to play >":"                       ", 19, 9);
 
-	getRenderer()->DrawString(menu == 0 ? "> 게임 시작" : "   게임 시작", 18, 10);
-	getRenderer()->DrawString(menu == 1 ? "> 게임 설정" : "   게임 설정", 18, 12);
-	getRenderer()->DrawString(menu == 2 ? "> 게임 종료" : "   게임 종료", 18, 14);
+	getRenderer()->DrawString(menu == 0 ? "> 게임 시작" : "   게임 시작", 22, 12);
+	getRenderer()->DrawString(menu == 1 ? "> 게임 설정" : "   게임 설정", 22, 14);
+	getRenderer()->DrawString(menu == 2 ? "> 게임 종료" : "   게임 종료", 22, 16);
 
 	getRenderer()->BufferFlip();
 }

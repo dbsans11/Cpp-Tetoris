@@ -47,13 +47,13 @@
     <ClInclude Include="Block.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="GameOverScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="BaseScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="SceneChanger.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
