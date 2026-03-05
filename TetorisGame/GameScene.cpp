@@ -18,10 +18,22 @@ SceneType GameScene::InputKey() {
 			break;
 		case KEY_SPACE:
 			int dropY = curBlock.getY(); while (CanMove(curBlock.getX(), dropY + 1)) dropY++;
-			for (int i = curBlock.getY(); i < dropY; ++i) curBlock.MoveDown();
+			for (int i = curBlock.getY(); i < dropY; ++i) curBlock.MoveDown(); EndTurn(); lastTime = GetTickCount64();
 			break;
 		}
 	} return SceneType::GAME;
+}
+
+void GameScene::EndTurn() {
+	board.LockBlock(curBlock);
+
+	int lines = board.CheckLines();
+	if (lines > 0) score += (lines * 100);
+
+	curBlock = nextBlock;
+	nextBlock = Block(rand() % 7);
+
+	if (!CanMove(curBlock.getX(), curBlock.getY())) isGameOver = 1;
 }
 
 bool GameScene::CanMove(int nX, int nY, const int (*shape)[4]) {
@@ -42,17 +54,8 @@ void GameScene::BlockUpdate() {
 	unsigned long long now = GetTickCount64();
 	if (now - lastTime > 500) {
 		if (CanMove(curBlock.getX(), curBlock.getY() + 1)) curBlock.MoveDown();
-		else {
-			board.LockBlock(curBlock);
-
-			int lines = board.CheckLines();
-			if (lines > 0) score += (lines * 100);
-
-			curBlock = nextBlock;
-			nextBlock = Block(rand() % 7);
-
-			if (!CanMove(curBlock.getX(), curBlock.getY())) isGameOver = 1;
-		} lastTime = now;
+		else EndTurn();
+		lastTime = now;
 	}
 }
 

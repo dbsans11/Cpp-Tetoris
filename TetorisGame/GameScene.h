@@ -19,6 +19,7 @@ public:
 	GameScene(Renderer* r) : BaseScene(r), curBlock(rand() % 7), nextBlock(rand() % 7) { lastTime = GetTickCount64(); score = 0; isGameOver = 0; }
 	SceneType getSceneType() override { return SceneType::GAME; }
 	SceneType InputKey();
+	void EndTurn();
 	bool CanMove(int nX, int nY, const int (*shape)[4] = nullptr);
 	void BlockUpdate();
 	void Render();
